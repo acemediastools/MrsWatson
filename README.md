@@ -1,6 +1,9 @@
 MrsWatson
 =========
 
+This fork fixes the issue https://github.com/teragonaudio/MrsWatson/issues/287 about carriage return in the stdout (PCM).
+The stdout is now formated as binary output (not a text output).
+
 This project is archived, because I don't have the time to maintain it
 anymore. Please contact info@teragonaudio.com if you have any further
 questions
