@@ -33,6 +33,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <fcntl.h>
+#include <io.h>
+
+
 static boolByte openSampleSourcePcm(void *selfPtr,
                                     const SampleSourceOpenAs openAs) {
   SampleSource self = (SampleSource)selfPtr;
@@ -48,9 +52,9 @@ static boolByte openSampleSourcePcm(void *selfPtr,
     }
   } else if (openAs == SAMPLE_SOURCE_OPEN_WRITE) {
     if (charStringIsEqualToCString(self->sourceName, "-", false)) {
-      extraData->fileHandle = stdout;
-      charStringCopyCString(self->sourceName, "stdout");
-      extraData->isStream = true;
+        extraData->fileHandle = fdopen((fileno(stdout)), "wb");
+        charStringCopyCString(self->sourceName, "stdout");
+        extraData->isStream = true;
     } else {
       extraData->fileHandle = fopen(self->sourceName->data, "wb");
     }

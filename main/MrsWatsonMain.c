@@ -32,6 +32,9 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <io.h>
+#include <fcntl.h>
+
 
 // This must be global so that in case of a crash or signal, we can still
 // generate
@@ -53,6 +56,7 @@ static void handleSignal(int signum) {
 
 int main(int argc, char *argv[]) {
   gErrorReporter = newErrorReporter();
+  _setmode(_fileno(stdout), _O_BINARY);
 
 // Set up signal handling only after logging is initialized. If we crash before
 // here, something is seriously wrong.
