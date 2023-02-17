@@ -1,7 +1,7 @@
 MrsWatson
 =========
 
-This fork fixes the issue https://github.com/teragonaudio/MrsWatson/issues/287 about carriage return in the stdout (PCM).
+This fork fixes the issue https://github.com/teragonaudio/MrsWatson/issues/287 about carriage return CRLF in the stdout (PCM) on Windows Build.
 The stdout is now formated as binary output (not a text output).
 
 This project is archived, because I don't have the time to maintain it
