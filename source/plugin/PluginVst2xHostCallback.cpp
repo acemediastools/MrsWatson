@@ -28,7 +28,7 @@
 
 // C++ includes
 #define VST_FORCE_DEPRECATED 0
-#include "aeffectx.h"
+#include "audioeffectx.h"
 
 // C includes
 extern "C" {

@@ -76,10 +76,19 @@ Unlike on Unix, you cannot build the software from the same directory as the
 source code.  So generating the Visual Studio project will look something like
 this:
 
-    cd c:\wherever
+    cd C:\wherever
     mkdir build
     cd build
+    cp 
     cmake -G "Visual Studio 14 2015" C:\path\to\MrsWatson
+
+    
+IF VST LIBRARY DOES NOT EXIST IN YOUR SOURCE PATH
+
+    cd C:\path\to\MrsWatson\source\plugin & copy "C:\wherever\build\VST_SDK\vst2sdk\public.sdk\source\vst2.x\*"
+
+Due to END OF LIFE of VST2 https://forums.steinberg.net/t/vst-2-sdk-discontinued/201774 
+the folder "pluginterfaces" contained "aeffect.h" does not in the official SDK folder of Steinberg Audio. You need to find it in another folder that use old VST2 sources and copy the folder "pluginterfaces" in C:\path\to\MrsWatson\source\plugin\
 
 Likewise, you can use the CMake GUI tool to accomplish the same task. This
 command will generate a Visual Studio project in `C:\wherever\build` which can

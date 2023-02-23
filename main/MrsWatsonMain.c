@@ -56,6 +56,7 @@ static void handleSignal(int signum) {
 
 int main(int argc, char *argv[]) {
   gErrorReporter = newErrorReporter();
+  _setmode(_fileno(stdin), _O_BINARY);
   _setmode(_fileno(stdout), _O_BINARY);
 
 // Set up signal handling only after logging is initialized. If we crash before

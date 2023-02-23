@@ -28,7 +28,7 @@
 #define MrsWatson_PluginVst2xCallbacks_h
 
 #define VST_FORCE_DEPRECATED 0
-#include "aeffectx.h"
+#include "audioeffectx.h"
 
 // Callbacks used by VST2.x plugins
 typedef AEffect *(*Vst2xPluginEntryFunc)(audioMasterCallback host);

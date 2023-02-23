@@ -44,7 +44,7 @@ static boolByte openSampleSourcePcm(void *selfPtr,
 
   if (openAs == SAMPLE_SOURCE_OPEN_READ) {
     if (charStringIsEqualToCString(self->sourceName, "-", false)) {
-      extraData->fileHandle = stdin;
+      extraData->fileHandle = fdopen((fileno(stdin)), "rb");
       charStringCopyCString(self->sourceName, "stdin");
       extraData->isStream = true;
     } else {

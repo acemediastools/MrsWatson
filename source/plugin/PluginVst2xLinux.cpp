@@ -27,7 +27,7 @@
 
 #if LINUX
 #define VST_FORCE_DEPRECATED 0
-#include "aeffectx.h"
+#include "audioeffectx.h"
 
 extern "C" {
 #include "base/CharString.h"
